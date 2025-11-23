@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <img src="https://cdn.pixabay.com/photo/2017/05/23/17/54/flower-2338131_1280.jpg" class="flower flower1" alt="">
+    <img src="https://cdn.pixabay.com/photo/2017/05/23/17/54/flower-2338131_1280.jpg" class="flower flower2" alt="">
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="error" style="color: red; display: none;">Invalid username or password.</p>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'Kath' && password === 'Kathrine30') {
+                window.location.href = 'Biography.html';
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
